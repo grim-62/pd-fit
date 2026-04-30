@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosError } from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const API_BASE_URL = process.env.EXPO_PUBLIC_API_URL || 'http://192.168.0.1:3000/api';
+const API_BASE_URL = process.env.EXPO_PUBLIC_API_URL || 'https://fit-pd-backend.onrender.com/api';
 
 interface AuthResponse {
   message: string;

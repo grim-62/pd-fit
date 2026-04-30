@@ -6,6 +6,7 @@ export interface User {
   id?: string;
   email: string;
   name?: string;
+  avatar?: string;
 }
 
 export interface AuthState {
@@ -42,7 +43,7 @@ export const loginUser = createAsyncThunk(
       await AsyncStorage.setItem('refreshToken', refreshToken);
 
       return {
-        user: { email: user.email, name: user.username },
+        user: { email: user.email, name: user.username, avatar: user.avatar },
         accessToken,
         refreshToken,
       };
@@ -70,7 +71,7 @@ export const registerUser = createAsyncThunk(
       await AsyncStorage.setItem('refreshToken', refreshToken);
 
       return {
-        user: { email: user.email, name: user.username },
+        user: { email: user.email, name: user.username, avatar: user.avatar },
         accessToken,
         refreshToken,
       };
@@ -116,6 +117,26 @@ export const restoreToken = createAsyncThunk(
     }
   }
 );
+
+export const fetchCurrentUser = createAsyncThunk(
+  'auth/fetchCurrentUser',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await apiClient.getMe();
+      const userData = response.data.user;
+      return {
+        name: userData.username,
+        email: userData.email,
+        avatar: userData.avatar,
+      };
+    } catch (error: any) {
+      return rejectWithValue(
+        error.response?.data?.message || 'Failed to fetch user profile'
+      );
+    }
+  }
+);
+
 
 const authSlice = createSlice({
   name: 'auth',
@@ -199,6 +220,23 @@ const authSlice = createSlice({
       })
       .addCase(restoreToken.rejected, (state) => {
         state.isAuthenticated = false;
+      });
+
+    // Fetch Current User
+    builder
+      .addCase(fetchCurrentUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchCurrentUser.fulfilled, (state, action) => {
+        state.isLoading = false;
+        // Keep existing user if partial info or override
+        state.user = {
+          ...state.user,
+          ...action.payload,
+        };
+      })
+      .addCase(fetchCurrentUser.rejected, (state, action) => {
+        state.isLoading = false;
       });
   },
 });

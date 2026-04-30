@@ -11,6 +11,10 @@ import {
 import { MaterialIcons } from '@expo/vector-icons';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import { useRouter } from 'expo-router';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '@/store/store';
+import { fetchCurrentUser, logoutUser } from '@/store/authSlice';
 
 const COLORS = {
   primary: '#004cca',
@@ -50,11 +54,17 @@ export default function ProfileScreen() {
   const colorScheme = useColorScheme() ?? 'light';
   const isDark = colorScheme === 'dark';
   const router = useRouter();
+  const dispatch = useDispatch<AppDispatch>();
+  const user = useSelector((state: RootState) => state.auth.user);
 
   const [unitSystem, setUnitSystem] = useState<'metric' | 'imperial'>('metric');
 
-  const handleLogout = () => {
-    // Navigate back to login
+  useEffect(() => {
+    dispatch(fetchCurrentUser());
+  }, [dispatch]);
+
+  const handleLogout = async () => {
+    await dispatch(logoutUser());
     router.replace('/(auth)/login');
   };
 
@@ -80,14 +90,14 @@ export default function ProfileScreen() {
           <View style={[styles.profileCard, isDark && styles.cardDark]}>
             <View style={styles.avatarContainer}>
               <View style={styles.avatarBorder}>
-                <Image source={{ uri: PROFILE_IMAGE }} style={styles.profileAvatar} />
+                <Image source={{ uri: user?.avatar || PROFILE_IMAGE }} style={styles.profileAvatar} />
               </View>
               <Pressable style={styles.editBtn}>
                 <MaterialIcons name="edit" size={14} color={COLORS.white} />
               </Pressable>
             </View>
-            <Text style={[styles.userName, isDark && styles.textDark]}>Sarah Mitchell</Text>
-            <Text style={styles.userSubtitle}>Elite Member • Since 2022</Text>
+            <Text style={[styles.userName, isDark && styles.textDark]}>{user?.name || 'User Profile'}</Text>
+            <Text style={styles.userSubtitle}>{user?.email || 'Loading...'}</Text>
 
             <View style={styles.statsRow}>
               <View style={styles.statCol}>
