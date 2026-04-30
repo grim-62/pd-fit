@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pulse Fitness - Settings &amp; Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#4ae176",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#002109",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-primary-fixed": "#00174b",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "inverse-surface": "#283044",
+                        "secondary": "#006e2f",
+                        "outline": "#737687",
+                        "on-surface-variant": "#424656",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#fff2e7",
+                        "surface-container": "#eaedff",
+                        "on-primary-container": "#f3f3ff",
+                        "on-background": "#131b2e",
+                        "primary-fixed": "#dbe1ff",
+                        "on-surface": "#131b2e",
+                        "surface-tint": "#0053da",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "primary-container": "#0062ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#faf8ff",
+                        "surface-bright": "#faf8ff",
+                        "secondary-fixed": "#6bff8f",
+                        "surface-container-high": "#e2e7ff",
+                        "error": "#ba1a1a",
+                        "primary": "#004cca",
+                        "tertiary-container": "#9c6300",
+                        "tertiary": "#7b4d00",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-secondary-fixed-variant": "#005321",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-dim": "#d2d9f4",
+                        "surface-container-highest": "#dae2fd",
+                        "on-secondary-container": "#007432",
+                        "background": "#faf8ff",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#dae2fd",
+                        "secondary-container": "#6bff8f",
+                        "inverse-primary": "#b4c5ff",
+                        "outline-variant": "#c2c6d9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin": "1.25rem",
+                        "section-gap": "2.5rem",
+                        "stack-md": "1rem",
+                        "stack-sm": "0.5rem",
+                        "stack-lg": "1.5rem",
+                        "gutter": "1rem"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "h1": ["Lexend"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h2": ["Lexend"],
+                        "display": ["Lexend"],
+                        "label-md": ["Inter"],
+                        "h3": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h1": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["10px", {"lineHeight": "12px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h2": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #faf8ff;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-background">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 shadow-sm shadow-slate-200/50 dark:shadow-none flex items-center justify-between px-5 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden border-2 border-primary-container">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a smiling athletic woman with tied back hair in professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjpFkE7FV4TNY0xMInWFL2TtiRpLD-6GlY9ufUhd2q07YBEIsILB3jx6iryIICE1WD9rWSs1JDfRR3exvdGvQruRpkkATKNnc4_FVd7qKWQjDqgquviTSOFINKaOm-4TgJLtvV-CaZUDhe3SNLluVYFaHewQrRugzkIzMFUAFAqy-jyVEjqI_81_jr0UN8d_R3E826OKmCJfivF6AxP_hQz8hUC_0BawVc8KYFL49LgR5dHDNoFLjb93-xYXCnhhFtnB0Y3Vo_SQ93"/>
+</div>
+<span class="font-lexend font-extrabold text-xl text-blue-600 dark:text-blue-500 tracking-tight">Pulse Fitness</span>
+</div>
+<button class="text-blue-600 dark:text-blue-500 hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="pt-20 pb-28 px-container-margin max-w-lg mx-auto">
+<!-- User Profile Header -->
+<section class="mb-section-gap">
+<div class="relative bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
+<div class="relative mb-4">
+<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary-container shadow-md">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a smiling athletic woman with tied back hair in professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8qvFaBVV4hi7TzvTR2vgT2rGUFMRBVtt_moD9DqhawWYP1L05XB90BltkqXLLgVi-cEmMm8nOgJuhf74ScgJj9q0Gr3k4aF5SsgrsxojZymYN3smbj5w9qb3fMM8xbE_TtZMcvQDysAw8jZm4Pwh_PlqZ7anKtkCl3XRfN_FQLAm6UAfEwUSb4sl5o1ajqpOqr6Fd2jj2LUWzNSAd_gztzc-ahbAjbprMy2xYCcNix_dRbd1txvnOj_86u5H3d_PI7Do_Vd_TvMHC"/>
+</div>
+<button class="absolute bottom-0 right-0 bg-primary text-white p-1.5 rounded-full shadow-lg border-2 border-white">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+</div>
+<h1 class="font-h1 text-h2 text-on-surface mb-1">Sarah Mitchell</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Elite Member • Since 2022</p>
+<div class="grid grid-cols-3 w-full mt-6 pt-6 border-t border-slate-50 gap-4">
+<div class="flex flex-col">
+<span class="font-h2 text-h3 text-primary">124</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Workouts</span>
+</div>
+<div class="flex flex-col border-x border-slate-50">
+<span class="font-h2 text-h3 text-primary">8.4k</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Calories</span>
+</div>
+<div class="flex flex-col">
+<span class="font-h2 text-h3 text-primary">12</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Badges</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Settings Bento Layout -->
+<section class="space-y-stack-lg">
+<h2 class="font-h2 text-h3 px-1">Settings</h2>
+<div class="grid grid-cols-1 gap-4">
+<!-- Notifications Card -->
+<div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="notifications_active">notifications_active</span>
+</div>
+<div>
+<p class="font-h3 text-body-md font-bold text-on-surface">Notifications</p>
+<p class="font-body-sm text-label-md text-outline">Push, Email &amp; SMS</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Account Privacy Card -->
+<div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+<div>
+<p class="font-h3 text-body-md font-bold text-on-surface">Account Privacy</p>
+<p class="font-body-sm text-label-md text-outline">Public, Friends or Private</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Units Settings (Asymmetric Interaction) -->
+<div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="straighten">straighten</span>
+</div>
+<div>
+<p class="font-h3 text-body-md font-bold text-on-surface">Units</p>
+<p class="font-body-sm text-label-md text-outline">Measurement system</p>
+</div>
+</div>
+</div>
+<div class="flex p-1 bg-surface-container rounded-lg">
+<button class="flex-1 py-2 rounded-md font-label-md text-label-md transition-all bg-white text-primary shadow-sm">Metric (kg/cm)</button>
+<button class="flex-1 py-2 rounded-md font-label-md text-label-md transition-all text-outline hover:bg-white/50">Imperial (lb/in)</button>
+</div>
+</div>
+<!-- Help & Support -->
+<div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</div>
+<div>
+<p class="font-h3 text-body-md font-bold text-on-surface">Help &amp; Support</p>
+<p class="font-body-sm text-label-md text-outline">FAQs and Live Chat</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Logout Action -->
+<section class="mt-section-gap">
+<button class="w-full py-4 px-6 rounded-xl bg-error-container text-on-error-container font-h3 text-body-md font-bold flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </button>
+<p class="text-center mt-6 font-label-sm text-label-sm text-outline">App Version 4.12.0 (Build 942)</p>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-2 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 pb-safe shadow-[0_-4px_12px_rgba(15,23,42,0.04)]">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 dark:hover:text-blue-300 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-lexend text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 dark:hover:text-blue-300 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-lexend text-[10px] font-medium">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 dark:hover:text-blue-300 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-3xl" data-icon="add_box">add_box</span>
+<span class="font-lexend text-[10px] font-medium">Add</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 dark:hover:text-blue-300 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-lexend text-[10px] font-medium">Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-600 dark:text-blue-400 font-bold bg-blue-50/50 dark:bg-blue-900/20 rounded-xl px-3 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-lexend text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</body></html>

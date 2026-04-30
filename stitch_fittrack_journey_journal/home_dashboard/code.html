@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pulse Fitness - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#4ae176",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#002109",
+                    "on-tertiary-fixed": "#2a1700",
+                    "on-primary-fixed": "#00174b",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "inverse-surface": "#283044",
+                    "secondary": "#006e2f",
+                    "outline": "#737687",
+                    "on-surface-variant": "#424656",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#fff2e7",
+                    "surface-container": "#eaedff",
+                    "on-primary-container": "#f3f3ff",
+                    "on-background": "#131b2e",
+                    "primary-fixed": "#dbe1ff",
+                    "on-surface": "#131b2e",
+                    "surface-tint": "#0053da",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "primary-container": "#0062ff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#faf8ff",
+                    "surface-bright": "#faf8ff",
+                    "secondary-fixed": "#6bff8f",
+                    "surface-container-high": "#e2e7ff",
+                    "error": "#ba1a1a",
+                    "primary": "#004cca",
+                    "tertiary-container": "#9c6300",
+                    "tertiary": "#7b4d00",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-secondary-fixed-variant": "#005321",
+                    "inverse-on-surface": "#eef0ff",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-dim": "#d2d9f4",
+                    "surface-container-highest": "#dae2fd",
+                    "on-secondary-container": "#007432",
+                    "background": "#faf8ff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f2f3ff",
+                    "tertiary-fixed": "#ffddb8",
+                    "surface-variant": "#dae2fd",
+                    "secondary-container": "#6bff8f",
+                    "inverse-primary": "#b4c5ff",
+                    "outline-variant": "#c2c6d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-margin": "1.25rem",
+                    "section-gap": "2.5rem",
+                    "stack-md": "1rem",
+                    "stack-sm": "0.5rem",
+                    "stack-lg": "1.5rem",
+                    "gutter": "1rem"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter"],
+                    "h1": ["Lexend"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h2": ["Lexend"],
+                    "display": ["Lexend"],
+                    "label-md": ["Inter"],
+                    "h3": ["Lexend"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "h1": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["10px", {"lineHeight": "12px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "h2": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-split-surface {
+            background: linear-gradient(to bottom, transparent 0%, #faf8ff 100%);
+        }
+        ::-webkit-scrollbar { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background min-h-screen pb-24">
+<header class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md fixed top-0 w-full z-50 border-b border-slate-100 dark:border-slate-800 shadow-sm shadow-slate-200/50 dark:shadow-none flex items-center justify-between px-5 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a fit woman with a confident smile, warm outdoor natural lighting, high resolution photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdzni759K9Xcg1DKyX_SuVGATBYszm2K97QuQYbJ3-agYfvy_yeMRMmC8L5-QI4BCxi8hwxLAjLW_QXusd34RTp--0zCChwSl-cHkMdW527KHetmY8_TN1lI68ZpK020Z1l5ZwWcDZjem5rA0SaWX_gMNXFSv6VDPTvo0IyLxhyQOrX2ITGAF1uVwWLc3s_i3ug6WRKBFS9BUiveupIWYwQFJN21H57Bh_7_Cqz8DhyLs3bEYuLTmo7p3p7ikNDGe0S68l4pxmYB3P"/>
+</div>
+<span class="font-lexend font-extrabold text-xl text-blue-600 dark:text-blue-500 tracking-tight">Pulse Fitness</span>
+</div>
+<button class="text-slate-400 dark:text-slate-500 hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="pt-20 px-container-margin space-y-stack-lg max-w-2xl mx-auto">
+<section class="space-y-stack-md">
+<div class="flex items-center justify-between">
+<h1 class="font-h2 text-h2 text-on-surface">Daily Pulse</h1>
+<span class="font-label-md text-label-md text-primary bg-primary-fixed px-2 py-1 rounded-full">NOV 14</span>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="bg-surface-container-lowest p-stack-md rounded-xl border border-slate-100 shadow-sm flex flex-col space-y-2">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="local_fire_department">local_fire_department</span>
+<span class="font-label-md text-label-md">ENERGY</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-h1 text-h1">1,840</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">kcal</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-full w-[75%] rounded-full"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-stack-md rounded-xl border border-slate-100 shadow-sm flex flex-col space-y-2">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="monitor_weight">monitor_weight</span>
+<span class="font-label-md text-label-md">WEIGHT</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-h1 text-h1">74.2</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">kg</span>
+</div>
+<div class="flex items-center gap-1 text-secondary font-label-md">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_down">trending_down</span>
+<span>-0.5kg this week</span>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-primary-container text-on-primary-container p-stack-lg rounded-2xl overflow-hidden relative shadow-lg shadow-blue-200/50">
+<div class="relative z-10 space-y-4">
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full font-label-md text-label-md uppercase tracking-wider">Today's Session</span>
+<h2 class="font-h2 text-h2">Hypertrophy Upper B</h2>
+</div>
+<div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="fitness_center">fitness_center</span>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+<span class="font-body-sm text-body-sm">45 min</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="bolt">bolt</span>
+<span class="font-body-sm text-body-sm">Medium Intensity</span>
+</div>
+</div>
+<button class="w-full bg-white text-primary font-lexend font-bold py-3 rounded-xl active:scale-[0.98] transition-transform">
+                    Start Workout
+                </button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-[160px]" data-icon="exercise">exercise</span>
+</div>
+</section>
+<section class="space-y-stack-md">
+<h3 class="font-h3 text-h3 text-on-surface">Quick Actions</h3>
+<div class="grid grid-cols-2 gap-4">
+<button class="group bg-surface-container-lowest border border-slate-100 p-4 rounded-2xl flex items-center gap-4 active:scale-95 transition-all shadow-sm">
+<div class="w-12 h-12 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center group-hover:bg-orange-100 transition-colors">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+</div>
+<div class="text-left">
+<p class="font-lexend font-semibold text-on-surface">Add Meal</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Log breakfast</p>
+</div>
+</button>
+<button class="group bg-surface-container-lowest border border-slate-100 p-4 rounded-2xl flex items-center gap-4 active:scale-95 transition-all shadow-sm">
+<div class="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-100 transition-colors">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+</div>
+<div class="text-left">
+<p class="font-lexend font-semibold text-on-surface">Log Weight</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Daily check-in</p>
+</div>
+</button>
+</div>
+</section>
+<section class="space-y-stack-md">
+<div class="flex items-center justify-between">
+<h3 class="font-h3 text-h3 text-on-surface">Recent Activity</h3>
+<button class="text-primary font-label-md text-label-md">VIEW ALL</button>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl border border-slate-100 divide-y divide-slate-100 shadow-sm overflow-hidden">
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="directions_run">directions_run</span>
+</div>
+<div>
+<p class="font-lexend font-medium text-on-surface">Morning Run</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">5.2 km • 28 min</p>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">7:30 AM</span>
+</div>
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-green-50 text-green-600 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="egg_alt">egg_alt</span>
+</div>
+<div>
+<p class="font-lexend font-medium text-on-surface">Breakfast</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">420 kcal • High Protein</p>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">8:15 AM</span>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-2 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 pb-safe shadow-[0_-4px_12px_rgba(15,23,42,0.04)]">
+<a class="flex flex-col items-center justify-center text-blue-600 dark:text-blue-400 font-bold bg-blue-50/50 dark:bg-blue-900/20 rounded-xl px-3 py-1 transition-transform duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-lexend text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 dark:hover:text-blue-300 transition-transform duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-lexend text-[10px] font-medium">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 dark:hover:text-blue-300 transition-transform duration-150 active:scale-90" href="#">
+<div class="bg-primary text-white p-2 rounded-xl mb-0.5">
+<span class="material-symbols-outlined" data-icon="add_box">add_box</span>
+</div>
+<span class="font-lexend text-[10px] font-medium">Add</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 dark:hover:text-blue-300 transition-transform duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-lexend text-[10px] font-medium">Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 dark:hover:text-blue-300 transition-transform duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-lexend text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</body></html>

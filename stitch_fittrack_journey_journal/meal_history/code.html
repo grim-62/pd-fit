@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meal History - Pulse Fitness</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#4ae176",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#002109",
+                    "on-tertiary-fixed": "#2a1700",
+                    "on-primary-fixed": "#00174b",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "inverse-surface": "#283044",
+                    "secondary": "#006e2f",
+                    "outline": "#737687",
+                    "on-surface-variant": "#424656",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#fff2e7",
+                    "surface-container": "#eaedff",
+                    "on-primary-container": "#f3f3ff",
+                    "on-background": "#131b2e",
+                    "primary-fixed": "#dbe1ff",
+                    "on-surface": "#131b2e",
+                    "surface-tint": "#0053da",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "primary-container": "#0062ff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#faf8ff",
+                    "surface-bright": "#faf8ff",
+                    "secondary-fixed": "#6bff8f",
+                    "surface-container-high": "#e2e7ff",
+                    "error": "#ba1a1a",
+                    "primary": "#004cca",
+                    "tertiary-container": "#9c6300",
+                    "tertiary": "#7b4d00",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-secondary-fixed-variant": "#005321",
+                    "inverse-on-surface": "#eef0ff",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-dim": "#d2d9f4",
+                    "surface-container-highest": "#dae2fd",
+                    "on-secondary-container": "#007432",
+                    "background": "#faf8ff",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#dae2fd",
+                    "secondary-container": "#6bff8f",
+                    "inverse-primary": "#b4c5ff",
+                    "outline-variant": "#c2c6d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-margin": "1.25rem",
+                    "section-gap": "2.5rem",
+                    "stack-md": "1rem",
+                    "stack-sm": "0.5rem",
+                    "stack-lg": "1.5rem",
+                    "gutter": "1rem"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter"],
+                    "h1": ["Lexend"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h2": ["Lexend"],
+                    "display": ["Lexend"],
+                    "label-md": ["Inter"],
+                    "h3": ["Lexend"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "h1": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["10px", {"lineHeight": "12px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "h2": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .meal-timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 40px;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #dbe1ff 0%, transparent 100%);
+        }
+        .meal-timeline-line:last-child::before {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed-dim selection:text-on-primary-fixed min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 shadow-sm shadow-slate-200/50 dark:shadow-none flex items-center justify-between px-5 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a smiling woman in gym attire with soft sunlight and a blurred background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDos1P2LKKJqEK5avncr5X4OumJK8qO2Fp6AtUCMnZxQhTq5Z3iN6NZOk4x8xfNStaA79L-_hb8Lf9eTHBBRss6PCKv5BMZCskhhavmk_tp80QVuAvSlKSj7RtZWQPzQok3pzwxsNLArZzu5MVOvo-Cr6nivrEwmU7fXv8wr51ZZDlf6ykcoCU6dlkHyMIIeKyY0F5vRLrDIk31yITBt5AnPUrfW6wsZDQDM-uI0Xb5J1_1PF4908DLfTYCAGaC3YM9m0HsoeWpNwnI"/>
+</div>
+<span class="font-lexend font-extrabold text-xl text-blue-600 dark:text-blue-500 tracking-tight">Pulse Fitness</span>
+</div>
+<button class="text-slate-400 dark:text-slate-500 hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="pt-20 px-container-margin max-w-2xl mx-auto">
+<!-- Header Section -->
+<section class="mb-section-gap pt-4">
+<h1 class="font-h1 text-h1 text-on-background mb-stack-sm">Meal History</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Track your nutrition journey and maintain your high-performance discipline.</p>
+</section>
+<!-- Stats Overview Bento -->
+<section class="grid grid-cols-2 gap-gutter mb-section-gap">
+<div class="col-span-1 p-4 bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="restaurant">restaurant</span>
+<span class="font-label-md text-label-md">Avg Calories</span>
+</div>
+<div class="font-h2 text-h2">2,450</div>
+<div class="font-label-sm text-label-sm text-secondary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="trending_up">trending_up</span>
+                    3% from last week
+                </div>
+</div>
+<div class="col-span-1 p-4 bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-2 mb-2 text-tertiary">
+<span class="material-symbols-outlined text-[20px]" data-icon="timer">timer</span>
+<span class="font-label-md text-label-md">Logged Today</span>
+</div>
+<div class="font-h2 text-h2">3 Meals</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">1,200 kcal remaining</div>
+</div>
+</section>
+<!-- Meal Timeline -->
+<div class="space-y-stack-lg">
+<!-- Date Header -->
+<div class="flex items-center gap-4 py-2">
+<div class="h-px flex-1 bg-outline-variant"></div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Today, Oct 24</span>
+<div class="h-px flex-1 bg-outline-variant"></div>
+</div>
+<!-- Meal Item 1 -->
+<div class="relative pl-12 meal-timeline-line">
+<div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-lg" data-icon="lunch_dining">lunch_dining</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex gap-4">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Healthy salad bowl with quinoa, avocado, and fresh greens on a clean white surface with natural morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYOp4wQn66cD-3Aueqa21vLWJB_PLycr5rKs12vTE-1XQb2_-1NtA4CLi0ycc8iN4ZS7lxbKCToSFnvzxwbNTC0Jfh7UviqEnslwqTOnFsMg1c3Z3Cfh11y0TsOmEbnpAjIB_HoefB7a_iuNWLWN8ptqZzT7OOsITljgsPi1datNqbNOvT--Gv9WSUpB4YflBSEaA-Fklc4qkTBA4AWYXtXl7QcuPBhq161nZkT4odTztZmjU5On8I9clkgCFTZ5KRlWGWZnIoHddA"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-h3 text-h3">Mediterranean Bowl</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1:30 PM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3 line-clamp-2">Grilled chicken breast, mixed greens, feta cheese, and balsamic vinaigrette. High protein focus.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">650 kcal</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">45g Protein</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Meal Item 2 -->
+<div class="relative pl-12 meal-timeline-line">
+<div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-lg" data-icon="coffee">coffee</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex gap-4">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Oatmeal topped with fresh blueberries and sliced almonds in a minimalist ceramic bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJTemn0TEZMHlzbQhxbaQ2bc5nL2UbwGx1zewwhBSjm_mJsukxIkEe1V0h1pu7AF9TEIZc8e5q9WRYImuRD_mBYA9TBwYPE2_3PDlqbwzDMswL6438Sr4DG8sPe1Xxa27cTg4WHj6uwjd3lo3urrNIe3HzqW344Qa3YcfINk_tPjDx1OvsAd6vL9KVbDPdzAtV0vxBAaIhhv3-ZXNGnWGoAS_sH8v38-1uHDjSU0Rd2jg4KukFiYlMgocHsaAi07zIoiuAme_q2FRZ"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-h3 text-h3">Berry Protein Oats</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">8:15 AM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Steel-cut oats with whey protein, blueberries, and a sprinkle of almonds. Pre-workout fuel.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">420 kcal</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">30g Protein</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Date Header -->
+<div class="flex items-center gap-4 py-2 mt-4">
+<div class="h-px flex-1 bg-outline-variant"></div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Yesterday, Oct 23</span>
+<div class="h-px flex-1 bg-outline-variant"></div>
+</div>
+<!-- Meal Item 3 -->
+<div class="relative pl-12 meal-timeline-line">
+<div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-lg" data-icon="dinner_dining">dinner_dining</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex gap-4">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Pan-seared salmon fillet with roasted asparagus and lemon slices on a dark slate plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJkusSGrDjmuLiaXSGkrlhg8Qk_4xH4fU3G33IGhFP84YjAOXxcaKSJCQnl8FrV13MUmiEhK5orgfmFhWdWrGXfPFDFmdFjNIBzIx-3znc3woJb7suMVAXB1nTBaAB-QTZYW0Mw0eCB1hW1JesIM1dtkhhYwi79JtMW97jZfy-QVQNrT3UWzz8C1S-zI0RdX_dnc2lx9jqZIiH-uBwu9eL-C2lBkE4yd_lMwPs36HXN6HYfWTLikDcodhWmeDe3YwNd5MOsrO7vQK9"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-h3 text-h3">Grilled Salmon Dinner</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">7:45 PM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Fresh salmon with asparagus and steamed broccoli. Rich in Omega-3 for recovery.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">580 kcal</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">42g Protein</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-2 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 pb-safe shadow-[0_-4px_12px_rgba(15,23,42,0.04)]">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 dark:hover:text-blue-300 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-lexend text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-600 dark:text-blue-400 font-bold bg-blue-50/50 dark:bg-blue-900/20 rounded-xl px-3 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="history" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-lexend text-[10px] font-medium">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 dark:hover:text-blue-300 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="add_box">add_box</span>
+<span class="font-lexend text-[10px] font-medium">Add</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 dark:hover:text-blue-300 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-lexend text-[10px] font-medium">Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 dark:hover:text-blue-300 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-lexend text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</body></html>

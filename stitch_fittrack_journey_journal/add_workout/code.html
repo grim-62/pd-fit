@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#4ae176",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#002109",
+            "on-tertiary-fixed": "#2a1700",
+            "on-primary-fixed": "#00174b",
+            "on-tertiary-fixed-variant": "#653e00",
+            "inverse-surface": "#283044",
+            "secondary": "#006e2f",
+            "outline": "#737687",
+            "on-surface-variant": "#424656",
+            "on-error-container": "#93000a",
+            "error-container": "#ffdad6",
+            "on-tertiary-container": "#fff2e7",
+            "surface-container": "#eaedff",
+            "on-primary-container": "#f3f3ff",
+            "on-background": "#131b2e",
+            "primary-fixed": "#dbe1ff",
+            "on-surface": "#131b2e",
+            "surface-tint": "#0053da",
+            "tertiary-fixed-dim": "#ffb95f",
+            "primary-container": "#0062ff",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#faf8ff",
+            "surface-bright": "#faf8ff",
+            "secondary-fixed": "#6bff8f",
+            "surface-container-high": "#e2e7ff",
+            "error": "#ba1a1a",
+            "primary": "#004cca",
+            "tertiary-container": "#9c6300",
+            "tertiary": "#7b4d00",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed-variant": "#003ea8",
+            "on-secondary-fixed-variant": "#005321",
+            "inverse-on-surface": "#eef0ff",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#b4c5ff",
+            "surface-dim": "#d2d9f4",
+            "surface-container-highest": "#dae2fd",
+            "on-secondary-container": "#007432",
+            "background": "#faf8ff",
+            "on-secondary": "#ffffff",
+            "surface-variant": "#dae2fd",
+            "secondary-container": "#6bff8f",
+            "inverse-primary": "#b4c5ff",
+            "outline-variant": "#c2c6d9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "container-margin": "1.25rem",
+            "section-gap": "2.5rem",
+            "stack-md": "1rem",
+            "stack-sm": "0.5rem",
+            "stack-lg": "1.5rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Inter"],
+            "h1": ["Lexend"],
+            "body-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "h2": ["Lexend"],
+            "display": ["Lexend"],
+            "label-md": ["Inter"],
+            "h3": ["Lexend"]
+          },
+          "fontSize": {
+            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "h1": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "label-sm": ["10px", {"lineHeight": "12px", "fontWeight": "500"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "h2": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "display": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+            "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 shadow-sm shadow-slate-200/50 dark:shadow-none flex items-center justify-between px-5 h-16">
+<div class="flex items-center gap-3">
+<img alt="User profile photo" class="w-8 h-8 rounded-full bg-slate-100" data-alt="close-up portrait of a fit person with a friendly expression in a modern high-end gym environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxAnyKDWZ87oUd1JDaboKd-9qOfpRQaDF9Uz0Q5piwRqrbUQKIwnBxyFRUA_XPibpcttqm9R49k6YOb9GkBMx-L5ESbf7obI6Yb2hsOT59KLU49cSRghLGJzTViQYs1KrwHmiNQmjRdUXHxkrsyH3R1y8ij0EOtQSP8bKPpwiFWu0lbWo0SFhBlApkVwPBpEzE3buZpPhUsusndkH_-Ksiv2m81gKXDPUxSuVuZ4IlqtvR-z_9Hng9dga3RL9HGcdRJqUsCwzRRgtU"/>
+<h1 class="font-lexend font-extrabold text-xl text-blue-600 dark:text-blue-500 tracking-tight">Pulse Fitness</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200 text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-24 px-container-margin max-w-xl mx-auto">
+<!-- Header Section -->
+<div class="mb-section-gap">
+<h2 class="font-h2 text-h2 text-on-background mb-2">Log Activity</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Precision tracking for your peak performance.</p>
+</div>
+<!-- Workout Form Bento-style Grid -->
+<div class="grid grid-cols-1 gap-gutter">
+<!-- Activity Selection Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0_4px_12px_rgba(15,23,42,0.04)]">
+<label class="block font-label-md text-label-md text-primary mb-4">ACTIVITY TYPE</label>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex flex-col items-center justify-center p-4 rounded-lg bg-blue-50 border-2 border-primary text-primary transition-all active:scale-95">
+<span class="material-symbols-outlined mb-2" data-icon="fitness_center" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+<span class="font-label-md text-label-md">STRENGTH</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 rounded-lg bg-surface border border-outline-variant text-on-surface-variant hover:border-primary/50 transition-all active:scale-95">
+<span class="material-symbols-outlined mb-2" data-icon="directions_run">directions_run</span>
+<span class="font-label-md text-label-md">CARDIO</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 rounded-lg bg-surface border border-outline-variant text-on-surface-variant hover:border-primary/50 transition-all active:scale-95">
+<span class="material-symbols-outlined mb-2" data-icon="self_improvement">self_improvement</span>
+<span class="font-label-md text-label-md">FLEXIBILITY</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 rounded-lg bg-surface border border-outline-variant text-on-surface-variant hover:border-primary/50 transition-all active:scale-95">
+<span class="material-symbols-outlined mb-2" data-icon="sports_basketball">sports_basketball</span>
+<span class="font-label-md text-label-md">SPORTS</span>
+</button>
+</div>
+</div>
+<!-- Duration and Metrics -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0_4px_12px_rgba(15,23,42,0.04)]">
+<div class="space-y-stack-lg">
+<div>
+<label class="block font-label-md text-label-md text-primary mb-2" for="duration">DURATION (MINUTES)</label>
+<div class="relative">
+<input class="w-full bg-surface border-2 border-transparent focus:border-primary rounded-lg py-4 px-4 font-h2 text-h2 text-on-surface outline-none transition-all placeholder:text-slate-300" id="duration" placeholder="45" type="number"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 font-label-md text-slate-400">MIN</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Intensity Selection -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0_4px_12px_rgba(15,23,42,0.04)]">
+<label class="block font-label-md text-label-md text-primary mb-4">INTENSITY LEVEL</label>
+<div class="flex items-center justify-between gap-2">
+<div class="flex-1 text-center">
+<div class="h-12 w-full bg-blue-50 border-2 border-primary rounded-lg mb-2 flex items-center justify-center font-h3 text-h3 text-primary">1</div>
+<span class="font-label-sm text-label-sm text-slate-400">LOW</span>
+</div>
+<div class="flex-1 text-center">
+<div class="h-12 w-full bg-surface border border-outline-variant rounded-lg mb-2 flex items-center justify-center font-h3 text-h3 text-on-surface-variant">2</div>
+<span class="font-label-sm text-label-sm text-slate-400">MED</span>
+</div>
+<div class="flex-1 text-center">
+<div class="h-12 w-full bg-surface border border-outline-variant rounded-lg mb-2 flex items-center justify-center font-h3 text-h3 text-on-surface-variant">3</div>
+<span class="font-label-sm text-label-sm text-slate-400">HIGH</span>
+</div>
+<div class="flex-1 text-center">
+<div class="h-12 w-full bg-surface border border-outline-variant rounded-lg mb-2 flex items-center justify-center font-h3 text-h3 text-on-surface-variant">4</div>
+<span class="font-label-sm text-label-sm text-slate-400">MAX</span>
+</div>
+</div>
+</div>
+<!-- Visual Context Card -->
+<div class="relative h-48 rounded-xl overflow-hidden group">
+<img alt="Training context" class="w-full h-full object-cover" data-alt="dramatic high-contrast shot of gym equipment in a dimly lit high-performance training facility with soft blue accent lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACG0CbtOlCnPNkZPrC6L1ONtTfjpQfPWZ6a-KpqMbYppz804bHhTZ6r_9gu3ZQuAnIQ0l-y_uwTCMXaQXnF-jNx_E_BpA73j2_qYUahvBlVbrrXPcRLkGHlEeINDieu2vXOTq4Dy64lZy7i51bTs6ujzSdy00bDjf10W3lz3O4nYqAbZpBgrYlEZcl_Xy9h7uUv4bl9o7z0ZZjXJZTj2ST3Vnzuc0UIVihJYV1VmUbjU2mThXlxrHFcfJNJpE7vjJo1oPUE2nOWmJf"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+<p class="text-white font-label-md text-label-md">Consistency is the bridge between goals and accomplishment.</p>
+</div>
+</div>
+<!-- Action Button -->
+<div class="pt-stack-md">
+<button class="w-full bg-primary text-on-primary font-h3 text-h3 py-4 rounded-xl shadow-lg shadow-primary/20 active:scale-95 transition-transform duration-150">
+          Save Workout
+        </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-2 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 pb-safe shadow-[0_-4px_12px_rgba(15,23,42,0.04)]">
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-lexend text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-lexend text-[10px] font-medium">History</span>
+</button>
+<button class="flex flex-col items-center justify-center text-blue-600 dark:text-blue-400 font-bold bg-blue-50/50 dark:bg-blue-900/20 rounded-xl px-3 py-1 transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="add_box" style="font-variation-settings: 'FILL' 1;">add_box</span>
+<span class="font-lexend text-[10px] font-medium">Add</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-lexend text-[10px] font-medium">Stats</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-lexend text-[10px] font-medium">Profile</span>
+</button>
+</nav>
+</body></html>

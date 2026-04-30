@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Log Weight</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Lexend:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#6bff8f",
+                    "on-tertiary-container": "#fff2e7",
+                    "on-surface-variant": "#424656",
+                    "primary": "#004cca",
+                    "on-background": "#131b2e",
+                    "surface-container-low": "#f2f3ff",
+                    "secondary-fixed-dim": "#4ae176",
+                    "on-surface": "#131b2e",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#ffddb8",
+                    "surface-variant": "#dae2fd",
+                    "primary-fixed": "#dbe1ff",
+                    "on-secondary-fixed": "#002109",
+                    "secondary-fixed": "#6bff8f",
+                    "on-primary-fixed": "#00174b",
+                    "surface-container-highest": "#dae2fd",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-primary-container": "#f3f3ff",
+                    "outline-variant": "#c2c6d9",
+                    "on-tertiary-fixed": "#2a1700",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "inverse-surface": "#283044",
+                    "inverse-primary": "#b4c5ff",
+                    "tertiary-container": "#9c6300",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#faf8ff",
+                    "outline": "#737687",
+                    "surface-tint": "#0053da",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#eaedff",
+                    "on-secondary-container": "#007432",
+                    "primary-container": "#0062ff",
+                    "tertiary": "#7b4d00",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface": "#faf8ff",
+                    "secondary": "#006e2f",
+                    "inverse-on-surface": "#eef0ff",
+                    "surface-container-high": "#e2e7ff",
+                    "background": "#faf8ff",
+                    "surface-dim": "#d2d9f4",
+                    "on-secondary-fixed-variant": "#005321"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-margin": "1.25rem",
+                    "section-gap": "2.5rem",
+                    "stack-sm": "0.5rem",
+                    "stack-md": "1rem",
+                    "gutter": "1rem",
+                    "stack-lg": "1.5rem"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "display": ["Lexend"],
+                    "body-lg": ["Inter"],
+                    "h1": ["Lexend"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "h3": ["Lexend"],
+                    "h2": ["Lexend"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "h1": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["10px", {"lineHeight": "12px", "fontWeight": "500"}],
+                    "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "h2": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 h-16 bg-white border-b border-slate-100 shadow-sm shadow-slate-200/50">
+<button class="text-blue-600 active:scale-95 transition-transform hover:bg-slate-50 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-['Lexend'] font-semibold text-lg text-blue-600">Log Weight</h1>
+<button class="text-blue-600 active:scale-95 transition-transform hover:bg-slate-50 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">history</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-container-margin pt-[88px] pb-container-margin flex flex-col gap-stack-lg max-w-md mx-auto w-full">
+<!-- Primary Input Card (Bento Style) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_16px_rgba(15,23,42,0.04)] p-stack-lg flex flex-col items-center relative border border-outline-variant/30">
+<!-- Unit Toggle -->
+<div class="absolute top-4 right-4 bg-surface-container rounded-full flex items-center p-1">
+<button class="px-3 py-1 bg-surface-container-lowest text-on-surface rounded-full font-label-sm text-label-sm shadow-sm transition-colors">kg</button>
+<button class="px-3 py-1 text-on-surface-variant font-label-sm text-label-sm transition-colors">lbs</button>
+</div>
+<!-- Weight Input -->
+<div class="mt-8 mb-2 flex flex-col items-center w-full">
+<input class="bg-transparent font-display text-display text-on-surface w-full text-center border-none focus:ring-0 p-0 outline-none" step="0.1" style="appearance: none; -moz-appearance: textfield;" type="number" value="78.5"/>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Current Weight</p>
+</div>
+<!-- Trend Indicator -->
+<div class="flex items-center gap-1 text-secondary font-label-md text-label-md mt-2 bg-secondary-container/20 px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">trending_down</span>
+                -0.5 kg from last week
+            </div>
+</div>
+<!-- Secondary Inputs Grid -->
+<div class="grid grid-cols-2 gap-gutter">
+<!-- Body Fat -->
+<div class="bg-surface-container-lowest rounded-xl p-stack-md shadow-[0_4px_16px_rgba(15,23,42,0.04)] border border-outline-variant/30 flex flex-col focus-within:border-primary transition-colors">
+<label class="font-label-md text-label-md text-on-surface-variant mb-stack-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">percent</span> Body Fat
+                </label>
+<div class="flex items-center mt-auto">
+<input class="bg-transparent font-h2 text-h2 text-on-surface w-full border-none p-0 focus:ring-0 placeholder:text-outline-variant outline-none" placeholder="Optional" type="number"/>
+</div>
+</div>
+<!-- Date Picker -->
+<div class="bg-surface-container-lowest rounded-xl p-stack-md shadow-[0_4px_16px_rgba(15,23,42,0.04)] border border-outline-variant/30 flex flex-col">
+<label class="font-label-md text-label-md text-on-surface-variant mb-stack-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span> Date
+                </label>
+<div class="flex items-center mt-auto">
+<span class="font-h2 text-h2 text-on-surface">Today</span>
+</div>
+</div>
+</div>
+<!-- Motivation Banner -->
+<div class="bg-secondary-container/20 border border-secondary-container rounded-lg p-stack-md flex items-center gap-stack-md">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary font-bold text-xl" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-secondary">3 Day Logging Streak!</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Consistency is key to tracking your progress accurately.</p>
+</div>
+</div>
+<!-- Spacer to push button to bottom if screen is tall -->
+<div class="flex-1"></div>
+<!-- Action Area -->
+<div class="pt-stack-md">
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-h3 text-h3 flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(0,76,202,0.2)] active:scale-[0.98] transition-transform">
+                Save Entry
+            </button>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Join Pulse Fitness</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#4ae176",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#002109",
+                    "on-tertiary-fixed": "#2a1700",
+                    "on-primary-fixed": "#00174b",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "inverse-surface": "#283044",
+                    "secondary": "#006e2f",
+                    "outline": "#737687",
+                    "on-surface-variant": "#424656",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#fff2e7",
+                    "surface-container": "#eaedff",
+                    "on-primary-container": "#f3f3ff",
+                    "on-background": "#131b2e",
+                    "primary-fixed": "#dbe1ff",
+                    "on-surface": "#131b2e",
+                    "surface-tint": "#0053da",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "primary-container": "#0062ff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#faf8ff",
+                    "surface-bright": "#faf8ff",
+                    "secondary-fixed": "#6bff8f",
+                    "surface-container-high": "#e2e7ff",
+                    "error": "#ba1a1a",
+                    "primary": "#004cca",
+                    "tertiary-container": "#9c6300",
+                    "tertiary": "#7b4d00",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-secondary-fixed-variant": "#005321",
+                    "inverse-on-surface": "#eef0ff",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-dim": "#d2d9f4",
+                    "surface-container-highest": "#dae2fd",
+                    "on-secondary-container": "#007432",
+                    "background": "#faf8ff",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#dae2fd",
+                    "secondary-container": "#6bff8f",
+                    "inverse-primary": "#b4c5ff",
+                    "outline-variant": "#c2c6d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-margin": "1.25rem",
+                    "section-gap": "2.5rem",
+                    "stack-md": "1rem",
+                    "stack-sm": "0.5rem",
+                    "stack-lg": "1.5rem",
+                    "gutter": "1rem"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter"],
+                    "h1": ["Lexend"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h2": ["Lexend"],
+                    "display": ["Lexend"],
+                    "label-md": ["Inter"],
+                    "h3": ["Lexend"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "h1": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["10px", {"lineHeight": "12px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "h2": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-split-surface {
+            background: linear-gradient(to bottom, transparent 0%, #faf8ff 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<main class="flex-grow flex flex-col items-center justify-center px-container-margin py-section-gap">
+<div class="w-full max-w-md">
+<!-- Branding/Welcome Section -->
+<div class="text-center mb-stack-lg">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary-container mb-stack-md shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-on-primary-container text-4xl" data-icon="exercise">exercise</span>
+</div>
+<h1 class="font-h1 text-h1 text-on-surface mb-2">Create Account</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Start your high-performance fitness journey with Pulse Fitness today.</p>
+</div>
+<!-- Registration Form Card -->
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] border border-outline-variant/30 shadow-sm shadow-slate-200/50">
+<form class="space-y-stack-md">
+<!-- Name Field -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="name">FULL NAME</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-xl" data-icon="person">person</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border border-transparent focus:border-primary focus:ring-0 rounded-xl font-body-md transition-all duration-200 outline-none placeholder:text-outline/50" id="name" placeholder="John Doe" type="text"/>
+</div>
+</div>
+<!-- Email Field -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="email">EMAIL ADDRESS</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-xl" data-icon="mail">mail</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border border-transparent focus:border-primary focus:ring-0 rounded-xl font-body-md transition-all duration-200 outline-none placeholder:text-outline/50" id="email" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="password">PASSWORD</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-xl" data-icon="lock">lock</span>
+<input class="w-full pl-12 pr-12 py-4 bg-surface-container-low border border-transparent focus:border-primary focus:ring-0 rounded-xl font-body-md transition-all duration-200 outline-none placeholder:text-outline/50" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Confirm Password Field -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="confirm-password">CONFIRM PASSWORD</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-xl" data-icon="lock_reset">lock_reset</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border border-transparent focus:border-primary focus:ring-0 rounded-xl font-body-md transition-all duration-200 outline-none placeholder:text-outline/50" id="confirm-password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<!-- Terms Checkbox -->
+<div class="flex items-start space-x-3 pt-2">
+<div class="flex items-center h-5">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" id="terms" type="checkbox"/>
+</div>
+<label class="font-body-sm text-body-sm text-on-surface-variant" for="terms">
+                            I agree to the <a class="text-primary font-semibold hover:underline" href="#">Terms of Service</a> and <a class="text-primary font-semibold hover:underline" href="#">Privacy Policy</a>
+</label>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary text-on-primary font-h3 text-h3 py-4 rounded-xl shadow-md shadow-primary/20 hover:opacity-90 active:scale-[0.98] transition-all duration-200 mt-stack-md" type="submit">
+                        Get Started
+                    </button>
+</form>
+<!-- Social Sign Up -->
+<div class="mt-8">
+<div class="relative flex items-center mb-6">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="flex-shrink mx-4 font-label-md text-label-md text-outline">OR REGISTER WITH</span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<button class="flex items-center justify-center py-3 px-4 border border-outline-variant rounded-xl font-label-md text-on-surface hover:bg-surface-container-low transition-colors active:scale-95 duration-150">
+<img alt="Google Logo" class="w-5 h-5 mr-3" data-alt="Official Google G logo in brand colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD56Gbe6YrOdNYQyoAE930nHzT31x5IKLiBD8upD0AqXgyjX_gwldCKnDgAat75haIW5PuGT22b2cV-V7FfoHqlqvqWO3A_niYLOcbSN7WEZ4cvyA1hGlD2z9gEB1UNOXQystZ8zYPNlJuXrKG3v7eQzCQESJxUYsXMe7tEkRLHgfMU7L2XzlYiZRCyJEPiR3EpcSK-j-zDnWaVn6NOMnM3Hf7ZObI4ZceflgZxcmwGEDylbPf6TzEaU0XWI7ouOM6i3QJyRthbclQw"/>
+                            GOOGLE
+                        </button>
+<button class="flex items-center justify-center py-3 px-4 border border-outline-variant rounded-xl font-label-md text-on-surface hover:bg-surface-container-low transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-xl mr-3 text-[#1877F2]" data-icon="facebook" style="font-variation-settings: 'FILL' 1;">social_leaderboard</span>
+                            FACEBOOK
+                        </button>
+</div>
+</div>
+</div>
+<!-- Login Link -->
+<p class="text-center mt-8 font-body-md text-body-md text-on-surface-variant">
+                Already have an account? 
+                <a class="text-primary font-bold hover:underline ml-1" href="#">Log In</a>
+</p>
+</div>
+</main>
+<!-- Visual Accent Element (Subtle Background Detail) -->
+<div class="fixed top-0 right-0 -z-10 opacity-10">
+<img alt="Fitness Aesthetic" class="w-[600px] h-[600px] object-cover rounded-full translate-x-1/2 -translate-y-1/3 blur-3xl" data-alt="abstract artistic background showing a silhouetted person exercising in a dimly lit high-end gym with blue atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYF8HAhgkwMNrrGjmkRVmW55JBC_G7mX3x1ZD31aSqWvFnY5jEzdakkWO7bg_tCgqNHrhWIhQzbGIILW-PCiZbFmYcsNPnxHuX4NhI8ywmoE9F0tPVkwvfSKB5DqjavXH7WNB1204crI1dXngPTdMvFZV_Tx3XosbZ-IrtUKrv8qmDAjRAw9QJttn2K7uGxNA99Z-WzpyTWY2sKux1-LKP9S8FiR2bO6PqTnypN1uTjg7P103HDn--nIXUPavnWrkSkLbcWMNXbN19"/>
+</div>
+<!-- Footer Meta -->
+<footer class="py-6 text-center">
+<p class="font-label-sm text-label-sm text-outline tracking-widest uppercase">Precision Health • Data Driven • Pulse Fitness</p>
+</footer>
+</body></html>
